@@ -160,6 +160,7 @@ import org.apache.spark.sql.functions.desc
 
 display(df.select("First_Name", "Donations_Amount").orderBy(desc("Donations_amount")))
 
+
 ![7 Apply some filter operation](https://github.com/user-attachments/assets/b6cd0e13-76af-4cf8-bdee-ff6f179ebf69)
 
 ##### Perform an aggregation operation
@@ -169,8 +170,18 @@ val avgSalary = df.groupBy("Department").agg(avg("Salary").as("AvgSalary"))
 
 avgSalary.show()
 
-![8 Aggregation operation](https://github.com/user-attachments/assets/d414bed1-6683-472d-bb10-bf2fbedd0988)
 
+![8 Aggregation operation](https://github.com/user-attachments/assets/d414bed1-6683-472d-bb10-bf2fbedd0988)
+##### Create a new column based on some specified conditions or transformation operations
+Let us say the management wants to reward employees that makes continuous monthly donations to specified charities by increasing their salaries by some percentage
+
+
+val transformed_salary= df.withColumn("New_Salary", when($"Donations_Amount" > 20, $"Salary" * 1.2).otherwise($"Salary"))
+
+transformed_salary.show()
+
+
+![9](https://github.com/user-attachments/assets/46e2d782-74c0-4105-b0bc-0cfafa513b45)
 
 ![10 Temoprary view and SQL queries](https://github.com/user-attachments/assets/00d232cc-5e53-4448-9970-c545e5ef3d82)
 
@@ -184,6 +195,8 @@ avgSalary.show()
 ![13 Spark SelectExpr method](https://github.com/user-attachments/assets/d644e0b7-a6ac-421f-8d20-6bfad6da9449)
 
 ![14 Spark Expr method](https://github.com/user-attachments/assets/8deac09c-87f3-4c4a-86b4-3918377435a1)
+
+
 
 
 
