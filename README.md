@@ -20,7 +20,45 @@ In this project, both Scala and Spark are used for data analysis on AWS Databric
 
 To create dataframes using Scala, import data into your Databrick's HDFS or paste data from a source onto a cell in your Databricks. 
 
-Several methods of importing or creating data on you Databrick's cell using Scala are discussed in the picture below:
+Several methods of importing or creating data on you Databrick's cell using Scala are discussed below:
+
+Spark and Scala can read data in various formats
+////////////////////// Read CSV data
+
+val csvDF = spark.read .option("header", "true") .csv("path/to/your/file.csv")
+
+//////////////////// Read JSON data
+
+val jsonDF = spark.read.json("path/to/your/file.json")
+
+/////////////////////// Read Parquet data
+
+val parquetDF = spark.read.parquet("path/to/your/file.parquet")
+
+///////////////////////// Write DataFrame to Parquet
+
+evenDF.write.parquet("path/to/output/directory")
+
+////////////////////// // Read data from some online repository
+val catalog = "Emmanuel_experiments"
+
+val schema = "Emmanuel_experiments"
+
+val volume = "volume_emmanuel_experiments"
+
+val downloadUrl = "https://health.data.ny.gov/api/views/jxy9-yhdk/rows.csv"
+
+val fileName = "rows.csv"
+
+val tableName = "table_name_emm_exp_scala"
+
+val pathVolume = s"/Volumes/$catalog/$schema/$volume"
+
+val pathTable = s"$catalog.$schema"
+
+print(pathVolume) // Show the complete path
+
+print(pathTable) // Show the complete path
 
 
 
