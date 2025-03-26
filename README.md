@@ -22,7 +22,9 @@ To create dataframes using Scala, import data into your Databrick's HDFS or past
 
 Several methods of importing or creating data on you Databrick's cell using Scala are discussed below:
 
-Spark and Scala can read data in various formats
+Spark and Scala can read data in various formatsval subset_of_df_female = df.filter((df("Department") === "Software") && (df("Donations_Amount") > 15) && (df("Gender") === "F")).select("First_Name", "Last_Name","ID", "Salary","Donations_Amount").orderBy(desc("Donations_Amount"))
+
+display(subset_of_df_female)
 
 ////////////////////// Read CSV data
 
@@ -205,11 +207,23 @@ display(subset_of_df_male)
 
 ![11 subset of origila dataframe based on some conditions](https://github.com/user-attachments/assets/23f55f2a-d2a8-4757-9733-753e1d12efd3)
 
+val subset_of_df_female = df.filter((df("Department") === "Software") && (df("Donations_Amount") > 15) && (df("Gender") === "F")).select("First_Name", "Last_Name","ID", "Salary","Donations_Amount").orderBy(desc("Donations_Amount"))
 
+display(subset_of_df_female)
 ![12 subset of original dataset](https://github.com/user-attachments/assets/9d4a8f1b-c9c1-42e8-bf73-e17a98b8787c)
 
+##### Transformation operation with Spark SelectExpr()
+display(df.selectExpr("Donations_Amount", "upper(Last_Name) as Last_Name_Upper"))
 
 ![13 Spark SelectExpr method](https://github.com/user-attachments/assets/d644e0b7-a6ac-421f-8d20-6bfad6da9449)
+
+
+##### Use expr() to use SQL syntax for a column
+Scala requires us to import the col() function as well as the expr() function
+
+import org.apache.spark.sql.functions.{col, expr}
+
+display(df.select(col("Donations_Amount"), expr("lower(Last_Name) as Last_Name_Lower")))
 
 ![14 Spark Expr method](https://github.com/user-attachments/assets/8deac09c-87f3-4c4a-86b4-3918377435a1)
 
