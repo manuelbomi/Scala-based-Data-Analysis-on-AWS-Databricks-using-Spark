@@ -155,6 +155,10 @@ display(df.where(df("Donations_amount") > 20))
 
 ![6 Apply some filter operations](https://github.com/user-attachments/assets/23f77468-7d9e-4866-ba28-66fed31ade10)
 
+##### Select columns from the DataFrame and order by frequency
+import org.apache.spark.sql.functions.desc
+
+display(df.select("First_Name", "Donations_Amount").orderBy(desc("Donations_amount")))
 
 ![7 Apply some filter operation](https://github.com/user-attachments/assets/b6cd0e13-76af-4cf8-bdee-ff6f179ebf69)
 
