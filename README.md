@@ -1,4 +1,32 @@
 ## Scala-based-Data-Analysis-on-AWS-Databricks-using-Spark
+### Spark Advantages
+Spark is an open source distributed, parallel-processing framework designed for processing massive data at scale. It addresses many of the limitations of Hadoop. Spark replaces the Hadoop's MapReduce structure with a faster framework that is more suitable for distributed machine learning jobs. Spark also offers more user-friendly APIs (Scala, R, Python, Java) along with its in-memory computing capabilities. Other advantages of Spark include:
+
+##### Fault Torenace: 
+Its Resilient Distributed Dataset abstraction enables it to recover quickly if a node fails. Spark also support dataframes, JSON, CSV, Parquet files and a host of other structured and semi-structured file formats. 
+
+#### Lazy Data Evaluation
+Spark's lazy data evaluation method enables it to be fast, and it allows for optimized query execution plans
+
+#### Unified Engine for Batch, Streaming and Graph Data Processing
+Spark provides at-scale and unified computing framework for a variety of data processing jobs including ML jobs, graph processing, bacth and streaming data analytics.  
+
+## Advantages of Scala
+Apache Spark is written in Scala programming language, and it also support Java Virtual Machine (JVM). Scala is written in Java, and it also support JVM. Codes written in Scala compiles into Java bytecodes. This provides excellent computing capabilities, optimization, and ease of intergration with Spark. In addition, Scala's concise and statically typed syntax allows for developers to easily build useful analytic queries with Scala. Its being statically type also enables error discoveries at compile time. 
+
+Scala is in object oriented programming language, and it easily supports inheritance and polymorphism since everything in Scala can be defined as classes and objects. 
+
+In this project, both Scala and Spark are used for data analysis on AWS Databricks (Community Edition). Please check (here:  https://github.com/manuelbomi/Data-Analysis-with-Pyspark-on-AWS-Databricks ) to see how to import data into your AWS Community Edition Databricks. 
+
+To create dataframes using Scala, import data into your Databrick's HDFS or paste data from a source onto a cell in your Databricks. 
+
+Several methods of importing or creating data on you Databrick's cell using Scala are discussed in the picture below:
+
+
+
+
+
+
 
 ![1 create scala dataframe](https://github.com/user-attachments/assets/22847b65-5ef8-40de-b892-b94bdbe6d5d3)
 
