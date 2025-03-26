@@ -131,7 +131,7 @@ df.show()
 
 ![4 Data from HDFS source](https://github.com/user-attachments/assets/1ff9270e-0ec8-4bda-901f-8194ad43739c)
 
-##### Rename data column
+##### Rename data column from the original dataframe (i.e., df)
 
 When modifying a DataFrame in Scala, you must assign it to a new variable
 
@@ -141,6 +141,17 @@ col1Renamed.printSchema()
 
 ![5 Rename data column](https://github.com/user-attachments/assets/68103821-2fdc-4808-8202-ecbc06f1dc3f)
 
+##### Apply some filter operations
+count the total number of records in the dataframe
+
+df.count()
+
+##### Display where amoount donated by staff is > 20 and also count the resulting number of records
+display(df.filter(df("Donations_amount") > 20))
+
+alternately, the above can also be accomplished with the code below
+
+display(df.where(df("Donations_amount") > 20))
 
 ![6 Apply some filter operations](https://github.com/user-attachments/assets/23f77468-7d9e-4866-ba28-66fed31ade10)
 
