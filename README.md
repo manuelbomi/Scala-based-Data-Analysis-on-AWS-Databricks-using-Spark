@@ -23,6 +23,7 @@ To create dataframes using Scala, import data into your Databrick's HDFS or past
 Several methods of importing or creating data on you Databrick's cell using Scala are discussed below:
 
 Spark and Scala can read data in various formats
+
 ////////////////////// Read CSV data
 
 val csvDF = spark.read .option("header", "true") .csv("path/to/your/file.csv")
@@ -40,6 +41,7 @@ val parquetDF = spark.read.parquet("path/to/your/file.parquet")
 evenDF.write.parquet("path/to/output/directory")
 
 ////////////////////// // Read data from some online repository
+
 val catalog = "Emmanuel_experiments"
 
 val schema = "Emmanuel_experiments"
@@ -59,6 +61,56 @@ val pathTable = s"$catalog.$schema"
 print(pathVolume) // Show the complete path
 
 print(pathTable) // Show the complete path
+
+Developers can also create data in form of a tuple or JSON list. In this project, we shall explore how to use Scala, Spark and SQL to perform some data analysis on such created data. The code is shown below. Interested developer can also download the full code form this repository. 
+
+##### Create Scala data from a tuple of data
+
+val data2 = Seq(
+
+("Emmanuel", "Oyekanlu", 6111876, "M", 33, 237000, "manuelbomi@yahoo.com", "Software", 11, 25),
+
+("Don", "Coder", 387654, "M", 30, 210000, "python-Coder@gmail.com", "IT", 12, 14),
+
+("Henry", "Charles", 3000127, "M", 42, 210000, "massie@yahoo.com", "Utilities", 7, 5),
+
+("Stephen", "Smith", 9087655, "M", 38, 156000, "miutss@karen.com", "Front Desk", 5, 3),
+
+("Rose", "CarlyWiggle", 5609876, "F", 24, 237000, "iutyrr@yahoo.com", "HR", 18, 21),
+
+("Diddier", "Thomas", 6347652, "M", 53, 237000, "potyur@yahoo.com", "Software", 19, 33),
+
+("Carla", "Fisher", 9871234, "F", 28, 121000, "tuyinmg@yahoo.com", "Engineering", 3, 34),
+
+("Yinka", "Eromonsele", 547863, "F", 29, 99500, "eromonsele@yahoo.com","Software",12, 18),
+
+("Rod", "BiggerStewart", 698328, "M", 54, 76500, "BiggerS@yahoo.com", "Engineering",12, 21),
+
+("Oliver", "Twist", 7652423, "M", 33, 200000, "Twister@yahoo.com", "Utilities", 7, 14),
+
+("Moses", "Aaron", 9876543, "M", 23, 186000, "Moses@cnn.com", "HR", 6, 24),
+
+("Molly", "Van Modeller", 6487653, "F", 39, 232000, "preacher@yahoo.com", "Software", 8, 22),
+
+("Barry", "TightFisted", 7864556, "M", 38, 115000, "boxer@yahoo.com", "IT", 5, 1),
+
+("Ken", "Chang", 9845376, "M", 26, 105890, "bongbonyahoo.com","IT", 10, 20),
+
+("Alhaji", "Kareem", 87565234, "M", 44, 65000, "uytrew@yahoo.com", "IT", 9, 13),
+
+("Islam", "Aboubacar", 8719865, "M", 32, 186100, "westerm@yahoo.com", "IT", 4, 11),
+
+("Meghan", "Markle", 7645348, "M", 44, 91000, "Missyr@yahoo.com", "HR", 2, 23)
+
+)
+
+val columns2 = Seq("First_Name", "Last_Name", "ID", "Gender", "Age", "Salary", "email", "Department", "Years_experience", "Donations_Amount")
+
+import spark.implicits._
+
+val df = data2.toDF(columns2: _*)
+
+df.show()
 
 
 
