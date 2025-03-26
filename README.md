@@ -198,7 +198,10 @@ SQLquery.show()
 
 
 ![10 Temoprary view and SQL queries](https://github.com/user-attachments/assets/00d232cc-5e53-4448-9970-c545e5ef3d82)
+##### Create a subset of the original dataframe  based on some conditions
+val subset_of_df_male = df.filter((df("Department") === "Software") && (df("Donations_Amount") > 15) && (df("Gender") === "M")).select("First_Name", "Last_Name","ID", "Salary","Donations_Amount").orderBy(desc("Donations_Amount"))
 
+display(subset_of_df_male)
 
 ![11 subset of origila dataframe based on some conditions](https://github.com/user-attachments/assets/23f55f2a-d2a8-4757-9733-753e1d12efd3)
 
