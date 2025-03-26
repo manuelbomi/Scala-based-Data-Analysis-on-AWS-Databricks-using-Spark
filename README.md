@@ -120,15 +120,24 @@ df.show()
 
 ![1 create scala dataframe](https://github.com/user-attachments/assets/22847b65-5ef8-40de-b892-b94bdbe6d5d3)
 
+##### Check data schema
 
 ![2 check data schema](https://github.com/user-attachments/assets/fc416e72-116e-49b2-9126-09aa0f23740d)
 
+##### Data could also be read from Databrick's HDFS after users upload the data into HDFS
 
 ![3 data can be uploaded into HDFS and read from HDFS](https://github.com/user-attachments/assets/3b982fb8-f87a-4185-bf92-769c173985fe)
 
 
 ![4 Data from HDFS source](https://github.com/user-attachments/assets/1ff9270e-0ec8-4bda-901f-8194ad43739c)
 
+##### Rename data column
+
+When modifying a DataFrame in Scala, you must assign it to a new variable
+
+val col1Renamed = df.withColumnRenamed("First_Name", "First_name") 
+
+col1Renamed.printSchema()
 
 ![5 Rename data column](https://github.com/user-attachments/assets/68103821-2fdc-4808-8202-ecbc06f1dc3f)
 
