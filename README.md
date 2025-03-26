@@ -168,6 +168,7 @@ import org.apache.spark.sql.functions._
 val avgSalary = df.groupBy("Department").agg(avg("Salary").as("AvgSalary"))
 
 avgSalary.show()
+
 ![8 Aggregation operation](https://github.com/user-attachments/assets/d414bed1-6683-472d-bb10-bf2fbedd0988)
 
 
