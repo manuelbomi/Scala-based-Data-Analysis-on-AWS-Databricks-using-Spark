@@ -173,7 +173,7 @@ avgSalary.show()
 
 ![8 Aggregation operation](https://github.com/user-attachments/assets/d414bed1-6683-472d-bb10-bf2fbedd0988)
 ##### Create a new column based on some specified conditions or transformation operations
-Let us say the management wants to reward employees that makes continuous monthly donations to specified charities by increasing their salaries by some percentage
+Let us say the management wants to reward employees that makes continuous monthly donations to some specified charities by increasing their salaries by some percentage
 
 
 val transformed_salary= df.withColumn("New_Salary", when($"Donations_Amount" > 20, $"Salary" * 1.2).otherwise($"Salary"))
@@ -182,6 +182,20 @@ transformed_salary.show()
 
 
 ![9](https://github.com/user-attachments/assets/46e2d782-74c0-4105-b0bc-0cfafa513b45)
+
+##### Create temporary view and use SQL queries
+We can use Scala with SQL queries
+
+We can also register the DataFrame as a temporary view and use SQL to query the data. This is especially useful for more complex queries.
+
+Let us check total donations by Department
+
+df.createOrReplaceTempView("all_employees")
+
+val SQLquery = spark.sql("SELECT Department, COUNT(*) AS AllEmployess, SUM(Donations_Amount) AS TotalDonations FROM all_employees GROUP BY Department")
+
+SQLquery.show()
+
 
 ![10 Temoprary view and SQL queries](https://github.com/user-attachments/assets/00d232cc-5e53-4448-9970-c545e5ef3d82)
 
