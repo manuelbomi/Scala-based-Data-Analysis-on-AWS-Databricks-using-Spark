@@ -1,4 +1,6 @@
-﻿"Emmanuel", "Oyekanlu", 6111876, "M", 33, 237000, "manuelbomi@yahoo.com", "Software", 11, 25
+"First_name", "Last_name", "ID", "Gender", "Salary(annum)", "email", "Department", "Experience(yrs), "Donation_amount""
+"George", "Bush", 60000, "M", 88, 400000, "george_bush@yahoo.com", "President", 70, 4000
+"Emmanuel", "Oyekanlu", 6111876, "M", 33, 237000, "manuelbomi@yahoo.com", "Software", 11, 25
 "Don", "Coder", 387654, "M", 30, 210000, "python-Coder@gmail.com", "IT", 12, 14
 “Henry", "Charles", 3000127, "M", 42, 210000, "massie@yahoo.com", "Utilities", 7, 5
 "Stephen", "Smith", 9087655, "M", 38, 156000, "miutss@karen.com", "Front Desk", 5, 3
