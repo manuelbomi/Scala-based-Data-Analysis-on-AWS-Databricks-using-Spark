@@ -1,4 +1,4 @@
-## Scala-based-Data-Analysis-on-AWS-Databricks-using-Spark
+## Scala-based Data Analysison AWS Databricks using Spark
 ### Spark Advantages
 Spark is an open source distributed, parallel-processing framework designed for processing massive data at scale. It addresses many of the limitations of Hadoop. Spark replaces the Hadoop's MapReduce structure with a faster framework that is more suitable for distributed machine learning jobs. Spark also offers more user-friendly APIs (Scala, R, Python, Java) along with its in-memory computing capabilities. Other advantages of Spark include:
 
